@@ -10,7 +10,7 @@ function ContactSection() {
         Contact US
       </h2>
 
-      <div className="flex flex-col lg:flex-row space-x-12 items-center">
+      <div className="flex flex-col lg:flex-row md:space-x-12 items-center">
         <div className="flex flex-col items-center bg-gray-800 bg-opacity-70 p-10 rounded-xl max-w-lg space-y-8 text-center lg:w-full w-[375px]">
           {/* Address */}
           <div className="flex items-center space-x-3">

@@ -33,9 +33,9 @@ function MenuSection({ title, items, menuPdf }) {
           {toTitleCase(title)}
         </h2>
 
-        <div className="flex flex-col items-center bg-miss-ivy-food text-white p-4 px-10 h-[42rem] justify-center rounded-xl border-4 border-black w-[375px] sm:w-[750px] md:w-[950px]">
+        <div className="flex flex-col items-center bg-miss-ivy-food text-white p-4 px-10 md:h-[42rem] h-[32rem] justify-center rounded-xl border-4 border-black w-[375px] xs:w-[750px] md:w-[950px]">
           {/* Carousel Content */}
-          <div className="flex relative max-w-screen-lg rounded-xl p-5 h-[42rem] items-center overflow-hidden">
+          <div className="flex relative max-w-screen-lg rounded-xl p-5 md:h-[42rem] h-[32rem] items-center overflow-hidden">
             <div
               className="flex transition-transform duration-300"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -43,7 +43,7 @@ function MenuSection({ title, items, menuPdf }) {
               {items.map((item, index) => (
                 <div
                   key={index}
-                  className="p-2 flex-shrink-0 w-full flex justify-center items-center"
+                  className="p-2 px-5 flex-shrink-0 w-full flex justify-center items-center"
                 >
                   <img
                     src={item.src}
@@ -61,14 +61,14 @@ function MenuSection({ title, items, menuPdf }) {
             {/* Navigation Buttons */}
             <button
               onClick={prevSlide}
-              className="absolute bottom-10 left-4 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
+              className="absolute bottom-0 left-2 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
             >
               ◀
             </button>
 
             <button
               onClick={nextSlide}
-              className="absolute bottom-10 right-[.9rem] z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
+              className="absolute bottom-0 right-2 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
             >
               ▶
             </button>
