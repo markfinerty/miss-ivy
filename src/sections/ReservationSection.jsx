@@ -2,8 +2,8 @@ import MyButton from "../components/MyButton";
 
 function ReservationSection() {
   return (
-    <section id="top" className="scroll-mt-28 bg-miss-ivy-banner min-h-[48rem] bg-cover bg-center flex items-center  justify-center w-full shadow-2xl !mt-0">
-      <div className="h-96 w-96 flex flex-col justify-center items-center text-center space-y-9 bg-miss-ivy-green bg-opacity-90 rounded-xl p-4 border-2 border-miss-ivy-gold border-dashed shadow-2xl">
+    <section id="top" className="scroll-mt-28 bg-miss-ivy-banner min-h-[48rem] bg-cover bg-center flex items-center justify-center w-screen !mt-0">
+      <div className="h-96 w-[375px] flex flex-col justify-center items-center text-center space-y-9 bg-miss-ivy-green bg-opacity-90 rounded-xl p-4 border-2 border-miss-ivy-gold border-dashed">
         <h2 className="text-miss-ivy-gold font-bold text-4xl">
           Reserve A Table
         </h2>

@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <MyNavbar />
-      <main className="pt-20 flex flex-col w-screen h-screen md:space-y-24 space-y-6 items-center overflow-y-scroll">
+      <main className="pt-16 flex flex-col w-screen h-screen md:space-y-24 space-y-6 items-center overflow-y-scroll">
         <ReservationSection />
         <MenuSection
           title="Dining"
@@ -25,8 +25,8 @@ function App() {
           isReversed={true} // Reverses the layout
         />
         <ContactSection />
-        <MyFooter />
       </main>
+      <MyFooter />
     </>
   );
 }
