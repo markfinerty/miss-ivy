@@ -33,7 +33,7 @@ function MenuSection({ title, items, menuPdf }) {
           {toTitleCase(title)}
         </h2>
 
-        <div className="flex flex-col items-center bg-miss-ivy-food text-white p-4 px-10 md:h-[42rem] h-[32rem] justify-center rounded-xl border-4 border-black w-[375px] xs:w-[750px] md:w-[950px]">
+        <div className="flex flex-col items-center bg-miss-ivy-food text-white p-4 px-10 md:h-[42rem] h-[32rem] justify-center rounded-xl border-4 border-black w-[350px] xs:w-[750px] md:w-[950px]">
           {/* Carousel Content */}
           <div className="flex relative max-w-screen-lg rounded-xl p-5 md:h-[42rem] h-[32rem] items-center overflow-hidden">
             <div
