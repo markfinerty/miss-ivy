@@ -1,4 +1,4 @@
-import ReservationSection from "./sections/ReservationSection";
+import BannerSection from "./sections/BannerSection";
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
 import MenuSection from "./sections/MenuSection";
@@ -10,7 +10,7 @@ function App() {
     <>
       <MyNavbar />
       <main className="pt-16 flex flex-col w-screen h-screen md:space-y-24 space-y-6 items-center overflow-y-scroll">
-        <ReservationSection />
+        <BannerSection />
         <MenuSection
           title="Dining"
           items={menuItems.foodItems}

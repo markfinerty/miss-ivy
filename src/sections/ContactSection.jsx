@@ -1,5 +1,7 @@
 import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { Footer } from "flowbite-react";
+import { BsFacebook, BsInstagram } from "react-icons/bs";
 
 function ContactSection() {
   const [screenSize, setScreenSize] = useState(window.innerWidth);
@@ -52,6 +54,22 @@ function ContactSection() {
               <p className="text-xl">Thursday - Sunday</p>
               <p className="text-xl">5 PM - Late</p>
             </div>
+          </div>
+          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center ">
+            <Footer.Icon
+              href="#"
+              icon={BsFacebook}
+              className="text-miss-ivy-gold"
+            />
+            <Footer.Icon
+              href="https://www.instagram.com/missivytoronto/"
+              target="_blank"
+              icon={BsInstagram}
+              className="text-miss-ivy-gold"
+            />
+            <a href="https://giggster.com" target="_blank">
+              <img src="/giggster.png" className="w-5" />
+            </a>
           </div>
         </div>
         {/* Google Maps Embed */}
