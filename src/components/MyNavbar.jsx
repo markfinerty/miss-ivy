@@ -36,7 +36,7 @@ export function MyNavbar() {
       <Navbar.Toggle className="hover:bg-black hover:border-2 border-miss-ivy-gold text-miss-ivy-gold focus:ring-0" />
 
       <Navbar.Collapse className="z-20 bg-miss-ivy-green lg">
-        <Navbar.Link href="#top" className={`${linkStyles}`}>
+        <Navbar.Link href="https://www.opentable.ca/r/miss-ivy-toronto?corrid=d2c2c43e-d0d0-449b-9550-28abfea43d60&p=2&sd=2024-10-28T19%3A00%3A00" className={`${linkStyles}`}>
           Reservations
         </Navbar.Link>
         <Navbar.Link href="#dining" className={`${linkStyles}`}>

@@ -68,10 +68,10 @@ function MenuSection({ title, items, menuPdf }) {
             <div className="mt-4">
               <a
                 href={menuPdf}
-                download={`${title.toLowerCase()}-menu.pdf`}
+                download={menuPdf}
                 className="text-miss-ivy-green hover:underline hover:text-white font-semibold flex items-center"
               >
-                {title}
+                Menu
                 <FaDownload className="inline-block ml-2" />
               </a>
             </div>

@@ -2,7 +2,6 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
 function ContactSection() {
-
   const [screenSize, setScreenSize] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -39,7 +38,9 @@ function ContactSection() {
             <FaPhoneAlt className="text-miss-ivy-gold text-2xl" />
             <div>
               <p className="text-xl font-semibold">Phone:</p>
-              <a className="text-xl" href="tel:+14375535452" >(437) 553-5452</a>
+              <a className="text-xl" href="tel:+14375535452">
+                (437) 553-5452
+              </a>
             </div>
           </div>
 
@@ -48,7 +49,7 @@ function ContactSection() {
             <FaClock className="text-miss-ivy-gold text-2xl" />
             <div>
               <p className="text-xl font-semibold">Hours:</p>
-              <p className="text-xl">Wednesday - Sunday</p>
+              <p className="text-xl">Thursday - Sunday</p>
               <p className="text-xl">5 PM - Late</p>
             </div>
           </div>

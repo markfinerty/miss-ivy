@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "miss-ivy-banner": "url('/stock-bar.jpeg')",
+        "miss-ivy-banner": "url('/ivy-banner.jpg')",
         "miss-ivy-food": 'url("/ivy-section-bg.webp")',
       },
       colors: {

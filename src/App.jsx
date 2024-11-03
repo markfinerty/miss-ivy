@@ -14,14 +14,12 @@ function App() {
         <MenuSection
           title="Dining"
           items={menuItems.foodItems}
-          menuImage="/food-menu.png"
           menuPdf="/dining-menu.pdf"
         />
         <MenuSection
           title="Cocktails"
           items={menuItems.drinkItems}
-          menuImage="/drinks-menu.jpg"
-          menuPdf="/cocktails-menu.jpg"
+          menuPdf="/cocktails-menu.pdf"
           isReversed={true} // Reverses the layout
         />
         <ContactSection />
