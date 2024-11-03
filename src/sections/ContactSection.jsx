@@ -39,7 +39,7 @@ function ContactSection() {
             <FaPhoneAlt className="text-miss-ivy-gold text-2xl" />
             <div>
               <p className="text-xl font-semibold">Phone:</p>
-              <p className="text-xl">(437) 553-5452</p>
+              <a className="text-xl" href="tel:+14375535452" >(437) 553-5452</a>
             </div>
           </div>
 

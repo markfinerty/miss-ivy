@@ -4,8 +4,7 @@ import { FaDownload } from "react-icons/fa";
 
 function MenuSection({ title, items, menuPdf }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const menuType = title.toLowerCase() === "food" ? "food" : "drinks";
+  const menuType = title.toLowerCase() === "food" ? "food" : "cocktails";
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
@@ -28,47 +27,39 @@ function MenuSection({ title, items, menuPdf }) {
   return (
     <section id={title.toLowerCase()} className="scroll-mt-28">
       <div className="flex flex-col items-center md:space-y-24 space-y-6">
-        {/* Title */}
         <h2 className="bg-miss-ivy-green text-center font-bold md:text-7xl text-miss-ivy-gold border-double border-4 border-miss-ivy-gold text-3xl md:p-12 p-8 ">
           {toTitleCase(title)}
         </h2>
 
         <div className="flex flex-col items-center bg-miss-ivy-food text-white p-4 px-10 md:h-[42rem] h-[32rem] justify-center rounded-xl border-4 border-black w-[350px] xs:w-[750px] md:w-[950px]">
-          {/* Carousel Content */}
-          <div className="flex relative max-w-screen-lg rounded-xl p-5 md:h-[42rem] h-[32rem] items-center overflow-hidden">
-            <div
-              className="flex transition-transform duration-300"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {items.map((item, index) => (
-                <div
-                  key={index}
-                  className="p-2 px-5 flex-shrink-0 w-full flex justify-center items-center"
-                >
-                  <img
-                    src={item.src}
-                    alt={item.title}
-                    className={`rounded-xl border-2 ${
-                      menuType === "drinks"
-                        ? "sm:h-[550px] w-auto"
-                        : "w-[600px] object-cover"
-                    }`}
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Navigation Buttons */}
+          <div className="relative w-full h-full flex items-center justify-center">
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className={`absolute transition-opacity duration-500 ease-in-out ${
+                  index === currentIndex ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className={`rounded-xl border-2 ${
+                    menuType === "cocktails"
+                      ? "sm:h-[550px] w-auto"
+                      : "w-auto object-cover"
+                  }`}
+                />
+              </div>
+            ))}
             <button
               onClick={prevSlide}
-              className="absolute bottom-0 left-2 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
+              className="absolute bottom-0 -left-3 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
             >
               ◀
             </button>
-
             <button
               onClick={nextSlide}
-              className="absolute bottom-0 right-2 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
+              className="absolute bottom-0 -right-3 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
             >
               ▶
             </button>
@@ -78,9 +69,9 @@ function MenuSection({ title, items, menuPdf }) {
               <a
                 href={menuPdf}
                 download={`${title.toLowerCase()}-menu.pdf`}
-                className="text-miss-ivy-green hover:underline hover:text-white font-semibold"
+                className="text-miss-ivy-green hover:underline hover:text-white font-semibold flex items-center"
               >
-                Menu
+                {title}
                 <FaDownload className="inline-block ml-2" />
               </a>
             </div>
@@ -100,7 +91,6 @@ MenuSection.propTypes = {
       src: PropTypes.string.isRequired,
     })
   ).isRequired,
-  menuImage: PropTypes.string.isRequired,
   menuPdf: PropTypes.string,
 };
 

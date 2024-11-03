@@ -8,7 +8,6 @@ export default {
       backgroundImage: {
         "miss-ivy-banner": "url('/stock-bar.jpeg')",
         "miss-ivy-food": 'url("/ivy-section-bg.webp")',
-        "miss-ivy-bg" : 'url("/leather_2.jpeg")',
       },
       colors: {
         "miss-ivy-green": "#013729",
