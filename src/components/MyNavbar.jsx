@@ -18,11 +18,7 @@ export function MyNavbar() {
 
   // Conditionally set the margin-left class based on screen size
   const middleAnchorMargin =
-    screenSize >= 1400
-      ? "ml-[48%]"
-      : screenSize < 767
-      ? "ml-[44%]"
-      : "";
+    screenSize >= 1400 ? "ml-[48%]" : screenSize < 767 ? "ml-[44%]" : "";
 
   return (
     <Navbar fluid className="bg-miss-ivy-green w-screen fixed z-20">
@@ -30,16 +26,13 @@ export function MyNavbar() {
         <img
           src="/brand-name-golden.png"
           alt="Miss Ivy Logo"
-          className="w-14 h-14"
+          className="w-14 h-14 ml-2"
         />
       </Navbar.Brand>
-      
+
       {/* Conditionally render the anchor based on screen size */}
       {screenSize >= 1400 || screenSize <= 767 ? (
-        <a
-          href="#top"
-          className={`fixed w-10 ${middleAnchorMargin}`}
-        >
+        <a href="#top" className={`fixed w-10 ${middleAnchorMargin}`}>
           <img src="/icon-golden.png" alt="Middle Icon" />
         </a>
       ) : null}
@@ -47,7 +40,10 @@ export function MyNavbar() {
       <Navbar.Toggle className="hover:bg-black hover:border-2 border-miss-ivy-gold text-miss-ivy-gold focus:ring-0" />
 
       <Navbar.Collapse className="z-20 bg-miss-ivy-green lg">
-        <Navbar.Link href="https://www.opentable.ca/r/miss-ivy-toronto?corrid=d2c2c43e-d0d0-449b-9550-28abfea43d60&p=2&sd=2024-10-28T19%3A00%3A00" className={`${linkStyles}`}>
+        <Navbar.Link
+          href="https://www.opentable.ca/r/miss-ivy-toronto?corrid=d2c2c43e-d0d0-449b-9550-28abfea43d60&p=2&sd=2024-10-28T19%3A00%3A00"
+          className={`${linkStyles}`}
+        >
           Reservations
         </Navbar.Link>
         <Navbar.Link href="#dining" className={`${linkStyles}`}>

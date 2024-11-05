@@ -35,7 +35,7 @@ function BannerSection() {
       <audio id="background-music" src="/bg-music.mp3" autoPlay loop />
       <button
         onClick={toggleMusic}
-        className="fixed top-24 left-4 bg-miss-ivy-green hover:bg-green-950 text-white font-semibold py-2 px-4 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-miss-ivy-gold hover:ring-miss-ivy-gold hover:ring-4 z-20"
+        className="fixed top-24 left-4 bg-miss-ivy-green text-white font-semibold py-2 px-4 rounded-full transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-miss-ivy-gold hover:ring-miss-ivy-gold hover:ring-4 z-20"
       >
         {isPlaying ? <FaPause size={20} /> : <FaMusic size={20} />}
       </button>
