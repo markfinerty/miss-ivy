@@ -53,13 +53,13 @@ function MenuSection({ title, items, menuPdf }) {
             ))}
             <button
               onClick={prevSlide}
-              className="absolute bottom-0 -left-3 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
+              className="absolute -bottom-11 -left-3 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
             >
               ◀
             </button>
             <button
               onClick={nextSlide}
-              className="absolute bottom-0 -right-3 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
+              className="absolute -bottom-11 -right-3 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
             >
               ▶
             </button>

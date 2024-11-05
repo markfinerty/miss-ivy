@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "miss-ivy-banner": "url('/ivy-banner.jpg')",
+        "miss-ivy-banner": "url('/ivy-banner-c.jpg')",
         "miss-ivy-food": 'url("/ivy-section-bg.webp")',
       },
       keyframes: {
