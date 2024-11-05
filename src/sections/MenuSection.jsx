@@ -45,7 +45,7 @@ function MenuSection({ title, items, menuPdf }) {
                   alt={item.title}
                   className={`rounded-xl border-2 ${
                     menuType === "cocktails"
-                      ? "sm:h-[550px] w-auto"
+                      ? "md:h-[550px] w-auto"
                       : "w-auto object-cover"
                   }`}
                 />

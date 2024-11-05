@@ -43,7 +43,7 @@ function App() {
           ref={paragraphRef}
           className={`${
             isParagraphVisible ? "animate-slideIn delay-1000" : "opacity-0"
-          } text-center md:w-[50rem] md:text-2xl text-white`}
+          } text-center max-w-[100rem] lg:text-2xl md:text-xl text-white`}
         >
           Nestled in the heart of Queen Street West, Miss Ivy is Toronto&apos;s
           premier destination for upscale Asian fusion cuisine. Our intimate
@@ -51,8 +51,9 @@ function App() {
           dishes make every visit an experience. Whether you&apos;re celebrating
           a special occasion or enjoying an elegant night out, Miss Ivy offers a
           sanctuary for unforgettable dining. Join us and discover a place where
-          tradition meets innovation, perfect for any occasion.
+          tradition meets innovation, perfect for any occasion
         </p>
+        <img src="/ivy-golden-both.png" alt="Ivy Golden Logo" className="h-60" />
         <MenuSection
           title="Dining"
           items={menuItems.foodItems}
