@@ -39,21 +39,28 @@ function App() {
       <MyNavbar />
       <main className="pt-16 flex flex-col w-screen min-screen md:space-y-24 space-y-6 items-center ">
         <BannerSection />
-        <p
-          ref={paragraphRef}
-          className={`${
-            isParagraphVisible ? "animate-slideIn delay-1000" : "opacity-0"
-          } text-center max-w-[100rem] lg:text-2xl md:text-xl text-white`}
-        >
-          Nestled in the heart of Queen Street West, Miss Ivy is Toronto&apos;s
-          premier destination for upscale Asian fusion cuisine. Our intimate
-          ambiance, exquisite handcrafted cocktails, and carefully curated
-          dishes make every visit an experience. Whether you&apos;re celebrating
-          a special occasion or enjoying an elegant night out, Miss Ivy offers a
-          sanctuary for unforgettable dining. Join us and discover a place where
-          tradition meets innovation, perfect for any occasion
-        </p>
-        <img src="/ivy-golden-both.png" alt="Ivy Golden Logo" className="h-60" />
+        <div className="flex flex-col w-full">
+          <p
+            ref={paragraphRef}
+            className={`${
+              isParagraphVisible ? "animate-slideIn delay-1000" : "opacity-0"
+            } text-center max-w-[100rem] lg:text-2xl md:text-xl text-white self-center`}
+          >
+            Nestled in the heart of Queen Street West, Miss Ivy is
+            Toronto&apos;s premier destination for upscale Asian fusion cuisine.
+            Our intimate ambiance, exquisite handcrafted cocktails, and
+            carefully curated dishes make every visit an experience. Whether
+            you&apos;re celebrating a special occasion or enjoying an elegant
+            night out, Miss Ivy offers a sanctuary for unforgettable dining.
+            Join us and discover a place where tradition meets innovation,
+            perfect for any occasion
+          </p>
+          <img
+            src="/signature.png"
+            alt="Ivy Golden Logo"
+            className="w-80 self-center md:w-[35rem] md:self-end md:-translate-x-40 mt-12"
+          />
+        </div>
         <MenuSection
           title="Dining"
           items={menuItems.foodItems}
