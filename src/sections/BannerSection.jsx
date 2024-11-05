@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {FaMusic, FaPause} from 'react-icons/fa'
+import { FaMusic, FaPause } from "react-icons/fa";
 
 function BannerSection() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -30,7 +30,7 @@ function BannerSection() {
   return (
     <section
       id="top"
-      className="scroll-mt-28 bg-miss-ivy-banner min-h-[48rem] bg-cover bg-center flex justify-center items-center w-screen text-white text-center"
+      className="border-l-2 border-black scroll-mt-28 bg-miss-ivy-banner min-h-[48rem] bg-cover bg-center flex justify-center items-center w-screen text-white text-center"
     >
       <audio id="background-music" src="/bg-music.mp3" autoPlay loop />
       <button
