@@ -30,7 +30,7 @@ function BannerSection() {
   return (
     <section
       id="top"
-      className="border-l-2 border-black scroll-mt-28 bg-miss-ivy-banner min-h-[48rem] bg-cover bg-center flex justify-center items-center w-screen text-white text-center"
+      className="border-l-2 border-black scroll-mt-28 bg-miss-ivy-banner sm:min-h-[45rem] min-h-[35rem] bg-cover bg-center flex justify-center items-center w-screen text-white text-center"
     >
       <audio id="background-music" src="/bg-music.mp3" autoPlay loop />
       <button
@@ -41,7 +41,7 @@ function BannerSection() {
       </button>
 
       <h1
-        className={`text-5xl font-semibold ${
+        className={`text-5xl sm:text-7xl font-semibold ${
           animationStarted ? "animate-slideIn" : "opacity-0"
         }`}
       >

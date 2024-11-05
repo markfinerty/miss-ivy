@@ -27,7 +27,7 @@ function MenuSection({ title, items, menuPdf }) {
   return (
     <section id={title.toLowerCase()} className="scroll-mt-28">
       <div className="flex flex-col items-center md:space-y-24 space-y-6">
-        <h2 className="bg-miss-ivy-green text-center font-bold md:text-7xl text-miss-ivy-gold border-double border-4 border-miss-ivy-gold text-3xl md:p-12 p-8 ">
+        <h2 className="bg-miss-ivy-green text-center font-bold md:text-6xl text-miss-ivy-gold border-double border-4 border-miss-ivy-gold text-3xl md:p-12 p-8">
           {toTitleCase(title)}
         </h2>
 

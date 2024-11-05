@@ -14,25 +14,32 @@ export function MyNavbar() {
   }, []);
 
   const linkStyles =
-    "text-miss-ivy-gold hover:!text-white hover:bg-hidden text-md text-center border-black border-b-2";
+    "text-miss-ivy-gold hover:!text-white hover:bg-hidden text-md text-center border-black border-b-2 hover:cursor-pointer";
 
   // Conditionally set the margin-left class based on screen size
   const middleAnchorMargin =
     screenSize >= 1400 ? "ml-[48%]" : screenSize < 767 ? "ml-[44%]" : "";
 
+  const handleSmoothScroll = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Navbar fluid className="bg-miss-ivy-green w-screen fixed z-20">
-      <Navbar.Brand href="#top">
+      <Navbar.Brand onClick={() => handleSmoothScroll("top")}>
         <img
           src="/brand-name-golden.png"
           alt="Miss Ivy Logo"
-          className="w-14 h-14 ml-2"
+          className="w-14 h-14 ml-2 hover:cursor-pointer"
         />
       </Navbar.Brand>
 
       {/* Conditionally render the anchor based on screen size */}
       {screenSize >= 1400 || screenSize <= 767 ? (
-        <a href="#top" className={`fixed w-10 ${middleAnchorMargin}`}>
+        <a onClick={() => handleSmoothScroll("top")} className={`fixed w-10 ${middleAnchorMargin} hover:cursor-pointer`}>
           <img src="/icon-golden.png" alt="Middle Icon" />
         </a>
       ) : null}
@@ -47,16 +54,16 @@ export function MyNavbar() {
         >
           Reservations
         </Navbar.Link>
-        <Navbar.Link href="#dining" className={`${linkStyles}`}>
+        <Navbar.Link onClick={() => handleSmoothScroll("dining")} className={`${linkStyles}`}>
           Dining
         </Navbar.Link>
-        <Navbar.Link href="#cocktails" className={`${linkStyles}`}>
+        <Navbar.Link onClick={() => handleSmoothScroll("cocktails")} className={`${linkStyles}`}>
           Cocktails
         </Navbar.Link>
-        <Navbar.Link href="#events" className={`${linkStyles}`}>
+        <Navbar.Link onClick={() => handleSmoothScroll("events")} className={`${linkStyles}`}>
           Events
         </Navbar.Link>
-        <Navbar.Link href="#contact" className={`${linkStyles}`}>
+        <Navbar.Link onClick={() => handleSmoothScroll("contact")} className={`${linkStyles}`}>
           Contact Us
         </Navbar.Link>
       </Navbar.Collapse>
