@@ -43,6 +43,7 @@ export function MyNavbar() {
         <Navbar.Link
           href="https://www.opentable.ca/r/miss-ivy-toronto?corrid=d2c2c43e-d0d0-449b-9550-28abfea43d60&p=2&sd=2024-10-28T19%3A00%3A00"
           className={`${linkStyles}`}
+          target="_blank"
         >
           Reservations
         </Navbar.Link>
