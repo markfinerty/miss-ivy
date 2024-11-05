@@ -16,6 +16,14 @@ export function MyNavbar() {
   const linkStyles =
     "text-miss-ivy-gold hover:!text-white hover:bg-hidden text-md text-center border-black border-b-2";
 
+  // Conditionally set the margin-left class based on screen size
+  const middleAnchorMargin =
+    screenSize >= 1400
+      ? "ml-[48%]"
+      : screenSize < 767
+      ? "ml-[44%]"
+      : "";
+
   return (
     <Navbar fluid className="bg-miss-ivy-green w-screen fixed z-20">
       <Navbar.Brand href="#top">
@@ -25,14 +33,17 @@ export function MyNavbar() {
           className="w-14 h-14"
         />
       </Navbar.Brand>
-      <a
-        href="#top"
-        className={`fixed ml-[48%] w-10 ${
-          screenSize >= 1400 ? "block" : "hidden"
-        }`}
-      >
-        <img src="/icon-golden.png" />
-      </a>
+      
+      {/* Conditionally render the anchor based on screen size */}
+      {screenSize >= 1400 || screenSize <= 767 ? (
+        <a
+          href="#top"
+          className={`fixed w-10 ${middleAnchorMargin}`}
+        >
+          <img src="/icon-golden.png" alt="Middle Icon" />
+        </a>
+      ) : null}
+
       <Navbar.Toggle className="hover:bg-black hover:border-2 border-miss-ivy-gold text-miss-ivy-gold focus:ring-0" />
 
       <Navbar.Collapse className="z-20 bg-miss-ivy-green lg">
