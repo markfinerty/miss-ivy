@@ -19,7 +19,6 @@ export default {
           "100%": { transform: "translateX(100%)", opacity: "0" },
         },
       },
-
       animation: {
         slideIn: "slideIn 1s ease-out forwards",
         slideOutRight: "slideOutRight 1s ease-out forwards",
