@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { FaDownload } from "react-icons/fa";
+import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 
 function MenuSection({ title, items, menuPdf }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -53,15 +54,15 @@ function MenuSection({ title, items, menuPdf }) {
             ))}
             <button
               onClick={prevSlide}
-              className="absolute -bottom-16 -left-3 z-10 text-2xl pb-1 px-4 pr-5 bg-miss-ivy-green text-miss-ivy-gold rounded-full border-4 hover:bg-green-950 border-miss-ivy-gold border-double"
+              className="absolute -bottom-16 -left-3 z-10 text-2xl px-4 pr-5 py-1  bg-miss-ivy-green text-miss-ivy-gold rounded-full border-4 hover:bg-green-950 border-miss-ivy-gold border-double"
             >
-              &#9664;
+              <GrCaretPrevious />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute -bottom-16 -right-3 z-10 px-4 pl-5 pb-1 text-2xl text-miss-ivy-gold bg-miss-ivy-green rounded-full border-4 border-miss-ivy-gold hover:bg-green-950 border-double"
+              className="absolute -bottom-16 -right-3 z-10 px-4 pl-5 py-1 text-2xl text-miss-ivy-gold bg-miss-ivy-green rounded-full border-4 border-miss-ivy-gold hover:bg-green-950 border-double"
             >
-              &#9654;
+              <GrCaretNext />
             </button>
           </div>
           {menuPdf && (
@@ -69,7 +70,7 @@ function MenuSection({ title, items, menuPdf }) {
               <a
                 href={menuPdf}
                 download={menuPdf}
-                className="text-miss-ivy-gold bg-miss-ivy-green p-2 border-4 border-double border-miss-ivy-gold hover:underline hover:text-white font-semibold flex items-center"
+                className="text-miss-ivy-gold bg-miss-ivy-green px-4 pl-5 py-1  border-4 border-double border-miss-ivy-gold hover:underline hover:text-white font-semibold flex items-center"
               >
                 Menu
                 <FaDownload className="inline-block ml-2" />
