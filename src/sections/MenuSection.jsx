@@ -32,7 +32,7 @@ function MenuSection({ title, items, menuPdf }) {
           {toTitleCase(title)}
         </h2>
 
-        <div className="flex flex-col items-center bg-miss-ivy-food text-white p-4 px-10 md:h-[42rem] h-[32rem] justify-center rounded-xl border-4 border-black w-[350px] xs:w-[750px] md:w-[950px] bg-left">
+        <div className="flex flex-col items-center bg-miss-ivy-food text-white p-4 px-10 md:h-[42rem] h-[32rem] justify-center rounded-xl border-4 border-black w-[350px] xs:w-[750px] md:w-[950px]">
           <div className="relative w-full h-full flex items-center justify-center">
             {items.map((item, index) => (
               <div
@@ -54,15 +54,15 @@ function MenuSection({ title, items, menuPdf }) {
             ))}
             <button
               onClick={prevSlide}
-              className="absolute -bottom-16 -left-3 z-10 text-2xl px-4 pr-5 py-1  bg-miss-ivy-green text-miss-ivy-gold rounded-full border-4 hover:bg-green-950 border-miss-ivy-gold border-double"
+              className="absolute -bottom-16 -left-3 z-10 text-2xl  bg-miss-ivy-green text-miss-ivy-gold rounded-full border-4 hover:bg-green-950 border-miss-ivy-gold border-double md:px-4 md:pr-5 md:py-1 p-1"
             >
-              <GrCaretPrevious />
+              <GrCaretPrevious className="-translate-x-0.5 md:translate-x-0" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute -bottom-16 -right-3 z-10 px-4 pl-5 py-1 text-2xl text-miss-ivy-gold bg-miss-ivy-green rounded-full border-4 border-miss-ivy-gold hover:bg-green-950 border-double"
+              className="absolute -bottom-16 -right-3 z-10 md:px-4 md:pl-5 md:py-1 text-2xl text-miss-ivy-gold bg-miss-ivy-green rounded-full border-4 border-miss-ivy-gold hover:bg-green-950 border-double p-1"
             >
-              <GrCaretNext />
+              <GrCaretNext className="translate-x-0.5 md:translate-x-0"/>
             </button>
           </div>
           {menuPdf && (
