@@ -55,13 +55,13 @@ function MenuSection({ title, items, menuPdf }) {
               onClick={prevSlide}
               className="absolute -bottom-14 -left-3 z-10 text-2xl pb-1 px-4 pr-5 bg-miss-ivy-green text-miss-ivy-gold rounded-full border-4 hover:bg-green-950 border-miss-ivy-gold border-double"
             >
-              ◀
+              &#9664;
             </button>
             <button
               onClick={nextSlide}
               className="absolute -bottom-14 -right-3 z-10 px-4 pl-5 pb-1 text-2xl text-miss-ivy-gold bg-miss-ivy-green rounded-full border-4 border-miss-ivy-gold hover:bg-green-950 border-double"
             >
-              ▶
+              &#9654;
             </button>
           </div>
           {menuPdf && (

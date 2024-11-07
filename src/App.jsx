@@ -37,7 +37,7 @@ function App() {
   return (
     <>
       <MyNavbar />
-      <main className="pt-16 flex flex-col w-screen min-screen md:space-y-24 space-y-6 items-center ">
+      <main className="pt-16 flex flex-col w-screen min-screen md:space-y-24 space-y-6 items-center">
         <BannerSection />
         <div className="flex flex-col bg-miss-ivy-green rounded-3xl p-6 border-4 border-miss-ivy-gold border-double mx-2">
           <p
