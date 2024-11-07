@@ -21,7 +21,7 @@ function ContactSection() {
       className="text-white flex flex-col items-center justify-between md:space-y-24 space-y-6 scroll-mt-28 p-12 w-full"
     >
       <h2 className="bg-miss-ivy-green text-center font-bold md:text-7xl text-miss-ivy-gold border-double border-4 border-miss-ivy-gold text-3xl md:p-12 p-8">
-        Contact US
+        Contact Us
       </h2>
 
       <div className="flex flex-col lg:flex-row md:space-x-12 items-center justify-center">
@@ -30,8 +30,8 @@ function ContactSection() {
           <div className="flex items-center space-x-3">
             <FaMapMarkerAlt className="text-miss-ivy-gold text-2xl" />
             <div>
-              <p className="text-xl">502 Queen St W</p>
-              <p className="text-xl">Toronto, ON M5V 2B3</p>
+              <p className="text-md">502 Queen St W</p>
+              <p className="text-md">Toronto, ON M5V 2B3</p>
             </div>
           </div>
 
@@ -39,8 +39,8 @@ function ContactSection() {
           <div className="flex items-center space-x-3">
             <FaPhoneAlt className="text-miss-ivy-gold text-2xl" />
             <div>
-              <p className="text-xl font-semibold">Phone:</p>
-              <a className="text-xl" href="tel:+14375535452">
+              <p className="text-md font-semibold">Phone:</p>
+              <a className="text-md" href="tel:+14375535452">
                 (437) 553-5452
               </a>
             </div>
@@ -50,9 +50,9 @@ function ContactSection() {
           <div className="flex items-center space-x-3">
             <FaClock className="text-miss-ivy-gold text-2xl" />
             <div>
-              <p className="text-xl font-semibold">Hours:</p>
-              <p className="text-xl">Thursday - Sunday</p>
-              <p className="text-xl">5 PM - Late</p>
+              <p className="text-md font-semibold">Hours:</p>
+              <p className="text-md">Thursday - Sunday</p>
+              <p className="text-md">5 PM - Late</p>
             </div>
           </div>
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center ">
