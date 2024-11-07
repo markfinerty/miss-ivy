@@ -25,7 +25,7 @@ function ContactSection() {
       </h2>
 
       <div className="flex flex-col lg:flex-row md:space-x-12 items-center justify-center">
-        <div className="flex flex-col items-center justify-center bg-gray-800 bg-opacity-70 p-10 rounded-xl max-w-lg space-y-8 text-center lg:w-full w-[350px]">
+        <div className="flex flex-col items-center justify-center bg-gray-800 bg-opacity-70 p-6 md:p-10 rounded-xl max-w-lg space-y-8 text-center lg:w-full w-[350px]">
           {/* Address */}
           <div className="flex items-center space-x-3">
             <FaMapMarkerAlt className="text-miss-ivy-gold text-2xl" />

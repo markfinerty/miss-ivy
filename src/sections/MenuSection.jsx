@@ -4,7 +4,7 @@ import { FaDownload } from "react-icons/fa";
 
 function MenuSection({ title, items, menuPdf }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const menuType = title.toLowerCase() === "food" ? "food" : "cocktails";
+  const menuType = title.toLowerCase() === "dining" ? "dining" : "cocktails";
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
@@ -46,7 +46,7 @@ function MenuSection({ title, items, menuPdf }) {
                   className={`rounded-xl border-2 ${
                     menuType === "cocktails"
                       ? "md:h-[550px] w-auto"
-                      : "w-auto object-cover"
+                      : "w-full object-cover"
                   }`}
                 />
               </div>
