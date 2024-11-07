@@ -53,13 +53,13 @@ function MenuSection({ title, items, menuPdf }) {
             ))}
             <button
               onClick={prevSlide}
-              className="absolute -bottom-11 -left-3 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
+              className="absolute -bottom-14 -left-3 z-10 text-2xl pb-1 px-4 pr-5 bg-miss-ivy-green text-miss-ivy-gold rounded-full border-4 hover:bg-green-950 border-miss-ivy-gold border-double"
             >
               ◀
             </button>
             <button
               onClick={nextSlide}
-              className="absolute -bottom-11 -right-3 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
+              className="absolute -bottom-14 -right-3 z-10 px-4 pl-5 pb-1 text-2xl text-miss-ivy-gold bg-miss-ivy-green rounded-full border-4 border-miss-ivy-gold hover:bg-green-950 border-double"
             >
               ▶
             </button>
@@ -69,7 +69,7 @@ function MenuSection({ title, items, menuPdf }) {
               <a
                 href={menuPdf}
                 download={menuPdf}
-                className="text-miss-ivy-green hover:underline hover:text-white font-semibold flex items-center"
+                className="text-miss-ivy-gold bg-miss-ivy-green p-2 border-4 border-double border-miss-ivy-gold hover:underline hover:text-white font-semibold flex items-center"
               >
                 Menu
                 <FaDownload className="inline-block ml-2" />
