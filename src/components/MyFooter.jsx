@@ -5,11 +5,15 @@ export default function MyFooter() {
   return (
     <Footer container className="bg-miss-ivy-green rounded-none">
       <div className="w-full flex flex-col items-center space-y-2 mb-4">
-        <Footer.Copyright by="MissIvyToronto™" year={2024} className="text-miss-ivy-gold" />
+        <Footer.Copyright
+          by="MissIvyToronto™"
+          year={2024}
+          className="text-miss-ivy-gold"
+        />
         {/* SOCIALS */}
         <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center ">
           <Footer.Icon
-            href="#"
+            href="https://www.facebook.com/profile.php?id=61564522005030"
             icon={BsFacebook}
             className="text-miss-ivy-gold"
           />

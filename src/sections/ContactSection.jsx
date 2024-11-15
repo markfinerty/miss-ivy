@@ -57,7 +57,7 @@ function ContactSection() {
           </div>
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center ">
             <Footer.Icon
-              href="#"
+              href="https://www.facebook.com/profile.php?id=61564522005030"
               icon={BsFacebook}
               className="text-miss-ivy-gold"
             />
