@@ -51,7 +51,7 @@ function ContactSection() {
             <FaClock className="text-miss-ivy-gold text-2xl" />
             <div>
               <p className="text-md font-semibold">Hours:</p>
-              <p className="text-md">Thursday - Sunday</p>
+              <p className="text-md">Wednesday - Sunday</p>
               <p className="text-md">5 PM - Late</p>
             </div>
           </div>
