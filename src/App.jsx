@@ -64,12 +64,12 @@ function App() {
         <MenuSection
           title="Dining"
           items={menuItems.foodItems}
-          menuPdf="/dining-menu.jpg"
+          menuPdf="/miss-ivy-menu.pdf"
         />
         <MenuSection
           title="Cocktails"
           items={menuItems.drinkItems}
-          menuPdf="/cocktails-menu.jpg"
+          menuPdf="/miss-ivy-menu.pdf"
           isReversed={true} // Reverses the layout
         />
         <ContactSection />
