@@ -5,6 +5,7 @@ import MyFooter from "./components/MyFooter";
 import MenuSection from "./sections/MenuSection";
 import ContactSection from "./sections/ContactSection";
 import menuItems from "./data/menuItems";
+import EventSection from "./sections/EventSection";
 
 function App() {
   const paragraphRef = useRef(null);
@@ -72,6 +73,7 @@ function App() {
           menuPdf="/miss-ivy-menu.pdf"
           isReversed={true} // Reverses the layout
         />
+        <EventSection />
         <ContactSection />
       </main>
       <MyFooter />

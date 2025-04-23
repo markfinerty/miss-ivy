@@ -2,6 +2,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { Footer } from "flowbite-react";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
+import MyBanner from "../components/MyHeader";
 
 function ContactSection() {
   const [screenSize, setScreenSize] = useState(window.innerWidth);
@@ -20,10 +21,7 @@ function ContactSection() {
       id="contact"
       className="text-white flex flex-col items-center justify-between md:space-y-24 space-y-6 scroll-mt-28 p-12 w-full"
     >
-      <h2 className="bg-miss-ivy-green text-center font-bold md:text-7xl text-miss-ivy-gold border-double border-4 border-miss-ivy-gold text-3xl md:p-12 p-8">
-        Contact Us
-      </h2>
-
+      <MyBanner title="Contact Us"></MyBanner>
       <div className="flex flex-col lg:flex-row md:space-x-12 items-center justify-center">
         <div className="flex flex-col items-center justify-center bg-gray-800 bg-opacity-70 p-6 md:p-10 rounded-xl max-w-lg space-y-8 text-center lg:w-full w-[350px]">
           {/* Address */}

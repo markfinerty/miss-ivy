@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import MyHeader from "../components/MyHeader";
 import { FaDownload } from "react-icons/fa";
 import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 
@@ -28,10 +29,7 @@ function MenuSection({ title, items, menuPdf }) {
   return (
     <section id={title.toLowerCase()} className="scroll-mt-28">
       <div className="flex flex-col items-center md:space-y-24 space-y-6">
-        <h2 className="bg-miss-ivy-green text-center font-bold md:text-6xl text-miss-ivy-gold border-double border-4 border-miss-ivy-gold text-3xl md:p-12 p-8">
-          {toTitleCase(title)}
-        </h2>
-
+        <MyHeader title={toTitleCase(title)} />
         <div className="flex flex-col items-center bg-miss-ivy-food text-white p-4 px-10 md:h-[42rem] h-[32rem] justify-center rounded-xl border-4 border-black w-[350px] xs:w-[750px] md:w-[950px]">
           <div className="relative w-full h-full flex items-center justify-center">
             {items.map((item, index) => (
@@ -62,7 +60,7 @@ function MenuSection({ title, items, menuPdf }) {
               onClick={nextSlide}
               className="absolute -bottom-16 -right-3 z-10 md:px-4 md:pl-5 md:py-1 text-2xl text-miss-ivy-gold bg-miss-ivy-green rounded-full border-4 border-miss-ivy-gold hover:bg-green-950 border-double p-1"
             >
-              <GrCaretNext className="translate-x-0.5 md:translate-x-0"/>
+              <GrCaretNext className="translate-x-0.5 md:translate-x-0" />
             </button>
           </div>
           {menuPdf && (
