@@ -2,7 +2,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { Footer } from "flowbite-react";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
-import MyBanner from "../components/MyHeader";
+import MyBanner from "../components/MyBanner";
 
 function ContactSection() {
   const [screenSize, setScreenSize] = useState(window.innerWidth);

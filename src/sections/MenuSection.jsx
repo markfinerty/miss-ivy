@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import MyHeader from "../components/MyHeader";
+import MyHeader from "../components/MyBanner";
 import { FaDownload } from "react-icons/fa";
 import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 
