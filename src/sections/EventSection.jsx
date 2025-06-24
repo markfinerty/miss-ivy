@@ -11,7 +11,7 @@ function EventSection() {
         <a
           href="https://www.eventbrite.ca/e/a-taste-of-magic-tickets-1413125830399?aff=oddtdtcreator-"
           target="_blank"
-          className="flex justify-self-center justify-center rounded-lg bg-miss-ivy-green px-4 py-2 mt-5 text-white hover:bg-green-800 border-4 border-miss-ivy-gold border-double w-96"
+          className="flex justify-center rounded-lg bg-miss-ivy-green mx-auto px-4 py-2 mt-5 text-white hover:bg-green-800 border-4 border-miss-ivy-gold border-double w-96"
         >
           Get Tickets
         </a>
