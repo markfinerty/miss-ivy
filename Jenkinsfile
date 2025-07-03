@@ -1,14 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'node:18-alpine'
+      args '-u root:root' // needed if Jenkins runs as non-root and the container needs to write files
+    }
+  }
 
   environment {
     REMOTE_PATH = '/var/www/missivy.co'
     REPO_URL = 'https://github.com/Mork7/miss-ivy.git'
-  }
-
-  options {
-    timeout(time: 3, unit: 'MINUTES')
-    disableConcurrentBuilds()
   }
 
   stages {
@@ -39,14 +39,14 @@ pipeline {
 
   post {
     success {
-      echo '🚀 Miss Ivy deployed successfully!'
+      echo '🚀 Miss Ivy deployed successfully (in Docker container)!'
     }
     failure {
-      echo '❌ Deployment failed!'
+      echo '❌ Dockerized deployment failed!'
     }
     always {
       echo '🧹 Cleaning up workspace...'
-      sh 'rm -rf node_modules dist || true'
+      sh 'rm -rf node_modules dist'
     }
   }
 }
