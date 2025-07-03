@@ -32,7 +32,10 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh "rsync -avz --delete dist/ $REMOTE_PATH"
+        sh '''
+            apk add --no-cache rsync
+            rsync -avz --delete dist/ $REMOTE_PATH
+        '''
       }
     }
   }
