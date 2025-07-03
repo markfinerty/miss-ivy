@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        NODE_ENV = 'production'
-    }
-
     stages {
         stage('Clone') {
             steps {
@@ -26,7 +22,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'rsync -avz --delete dist/ /var/www/miss-ivy.ca'
+                sh 'rsync -avz --delete dist/ /var/www/missivy.co'
             }
         }
     }
