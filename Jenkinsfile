@@ -39,5 +39,13 @@ pipeline {
     failure {
       echo '❌ Deployment failed!'
     }
+    always {
+        echo '🧹 Cleaning up workspace...'
+        sh 'rm -rf node_modules dist || true'
+    }
   }
+
+  options {
+        timeout(time: 3, unit: 'MINUTES')
+    }
 }
