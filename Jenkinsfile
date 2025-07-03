@@ -27,23 +27,25 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm run build'
+        // Copy dist/ to a shared workspace path
+        sh 'cp -r dist $WORKSPACE/dist'
       }
     }
 
     stage('Deploy') {
-        agent { label 'master' } // runs on the host instead
-        steps {
-            sh 'rsync -avz --delete dist/ /var/www/missivy.co'
-        }
+      agent { label 'master' } // switch to host node
+      steps {
+        sh 'rsync -avz --delete $WORKSPACE/dist/ /var/www/missivy.co'
+      }
     }
   }
 
   post {
     success {
-      echo '🚀 Miss Ivy deployed successfully (in Docker container)!'
+      echo '🚀 Miss Ivy deployed successfully!'
     }
     failure {
-      echo '❌ Dockerized deployment failed!'
+      echo '❌ Deployment failed!'
     }
     always {
       echo '🧹 Cleaning up workspace...'
@@ -51,4 +53,3 @@ pipeline {
     }
   }
 }
-
