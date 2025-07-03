@@ -1,47 +1,32 @@
 pipeline {
-  agent none
+    agent any
 
-  environment {
-    REMOTE_PATH = '/var/www/missivy.co'
-    REPO_URL = 'https://github.com/Mork7/miss-ivy.git'
-  }
-
-  stages {
-    stage('Build in Docker') {
-      agent {
-        docker {
-          image 'node:18-alpine'
-          args '-u 991:991'
-        }
-      }
-      steps {
-        dir('build') {
-          deleteDir()
-          git credentialsId: 'github-pat', url: "${REPO_URL}"
-          sh 'npm ci || npm install'
-          sh 'npm run build'
-          sh 'chown -R 991:991 dist'
-          stash name: 'dist', includes: 'dist/**'
-        }
-      }
+    environment {
+        NODE_ENV = 'production'
     }
 
-    stage('Deploy') {
-      agent { label 'master' }
-      steps {
-        deleteDir()
-        unstash 'dist'
-        sh 'rsync -avz --delete dist/ /var/www/missivy.co'
-      }
-    }
-  }
+    stages {
+        stage('Clone') {
+            steps {
+                git url: 'https://github.com/Mork7/miss-ivy.git', credentialsId: 'github-pat'
+            }
+        }
 
-    post {
-        always {
-            node('master') {
-            echo '🧹 Cleaning up workspace...'
-                deleteDir()
-                cleanWs()
+        stage('Install') {
+            steps {
+                sh 'npm install'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'rsync -avz --delete dist/ /var/www/miss-ivy.ca'
             }
         }
     }
