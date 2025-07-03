@@ -21,7 +21,7 @@ pipeline {
           sh 'npm ci || npm install'
           sh 'npm run build'
           sh 'chown -R 991:991 dist'
-          stash name: 'dist', includes: 'build/dist/**'
+          stash name: 'dist', includes: 'dist/**'
         }
       }
     }
@@ -31,17 +31,18 @@ pipeline {
       steps {
         deleteDir()
         unstash 'dist'
-        sh 'rsync -avz --delete build/dist/ /var/www/missivy.co'
+        sh 'rsync -avz --delete dist/ /var/www/missivy.co'
       }
     }
   }
 
-  post {
-    always {
-      node('master') {
-        echo '🧹 Cleaning up...'
-        cleanWs()
-      }
+    post {
+        always {
+            node('master') {
+            echo '🧹 Cleaning up workspace...'
+                deleteDir()
+                cleanWs()
+            }
+        }
     }
-  }
 }
