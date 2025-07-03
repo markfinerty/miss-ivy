@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     REMOTE_PATH = '/var/www/missivy.co'
-    REPO_URL = 'https://github.com/Mork7/missivy.git'
+    REPO_URL = 'https://github.com/Mork7/miss-ivy.git'
   }
 
   stages {
