@@ -31,7 +31,7 @@ pipeline {
     }
 
     stage('Deploy') {
-        agent { label 'jenkins' } // runs on the host instead
+        agent { label 'master' } // runs on the host instead
         steps {
             sh 'rsync -avz --delete dist/ /var/www/missivy.co'
         }
