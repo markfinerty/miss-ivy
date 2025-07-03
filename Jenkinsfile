@@ -6,6 +6,11 @@ pipeline {
     REPO_URL = 'https://github.com/Mork7/miss-ivy.git'
   }
 
+  options {
+    timeout(time: 3, unit: 'MINUTES')
+    disableConcurrentBuilds()
+  }
+
   stages {
     stage('Clone Repo') {
       steps {
@@ -40,12 +45,8 @@ pipeline {
       echo '❌ Deployment failed!'
     }
     always {
-        echo '🧹 Cleaning up workspace...'
-        sh 'rm -rf node_modules dist || true'
+      echo '🧹 Cleaning up workspace...'
+      sh 'rm -rf node_modules dist || true'
     }
   }
-
-  options {
-        timeout(time: 3, unit: 'MINUTES')
-    }
 }
