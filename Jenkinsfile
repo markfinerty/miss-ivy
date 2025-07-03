@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:18-alpine'
-      args '-u root:root'
-    }
-  }
+  agent none
 
   environment {
     REMOTE_PATH = '/var/www/missivy.co'
@@ -12,61 +7,41 @@ pipeline {
   }
 
   stages {
-    stage('Clone Repo') {
+    stage('Build in Docker') {
+      agent {
+        docker {
+          image 'node:18-alpine'
+          args '-u root:root'
+        }
+      }
       steps {
         git credentialsId: 'github-pat', url: "${REPO_URL}"
-      }
-    }
-
-    stage('Install Dependencies') {
-      steps {
         sh 'npm ci || npm install'
+        sh 'npm run build'
+        // THIS IS THE PROBLEM AREA — MOVE STASH OUTSIDE
       }
     }
 
-    stage('Build') {
+    stage('Stash Dist') {
+      agent { label 'master' } // OR no label if you want it default
       steps {
-        sh 'npm run build'
-        stash name: 'dist', includes: 'dist/**/*', useDefaultExcludes: false
+        stash name: 'dist', includes: 'dist/**'
       }
     }
 
     stage('Deploy') {
-  agent none
-  steps {
-    node('master') {
-      unstash 'dist'
-
-      sh 'echo "[DEBUG] Listing root of workspace:" && ls -lah'
-      sh 'echo "[DEBUG] Listing dist folder:" && ls -lah dist || echo "dist folder is missing!"'
-
-      sh '''
-        if [ ! -d "dist" ]; then
-          echo "[ERROR] dist folder not found after unstash"
-          exit 1
-        fi
-
-        echo "[INFO] Deploying with rsync..."
-        rsync -avz --delete dist/ /var/www/missivy.co || {
-          echo "[ERROR] rsync failed"
-          exit 1
-        }
-      '''
+      agent { label 'master' }
+      steps {
+        unstash 'dist'
+        sh 'rsync -avz --delete dist/ /var/www/missivy.co'
+      }
     }
-  }
-}
   }
 
   post {
-    success {
-      echo '🚀 Miss Ivy deployed successfully!'
+    always {
+      echo '🧹 Cleaning up...'
+      // You can safely clean here after this works
     }
-    failure {
-      echo '❌ Deployment failed!'
-    }
-    // always {
-    //   echo '🧹 Cleaning up workspace...'
-    //   sh 'rm -rf node_modules dist'
-    // }
   }
 }
