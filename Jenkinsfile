@@ -25,31 +25,31 @@ pipeline {
     }
 
     stage('Build') {
-        steps {
-            sh 'npm run build'
-            stash name: 'dist', includes: 'dist/**'
-        }
+      steps {
+        sh 'npm run build'
+        stash name: 'dist', includes: 'dist/**/*', useDefaultExcludes: false
+      }
     }
 
     stage('Deploy') {
-        agent none
-        steps {
-            node('master') {
-                unstash 'dist'
-                sh 'ls -lah dist'
-                sh 'rsync -avz --delete dist/ /var/www/missivy.co'
-            }
+      agent none
+      steps {
+        node('master') {
+          unstash 'dist'
+          sh 'ls -lah'
+          sh 'ls -lah dist'
+          sh 'rsync -avz --delete dist/ /var/www/missivy.co'
         }
+      }
     }
   }
 
-
   post {
     success {
-      echo '🚀 Miss Ivy deployed successfully (in Docker container)!'
+      echo '🚀 Miss Ivy deployed successfully!'
     }
     failure {
-      echo '❌ Dockerized deployment failed!'
+      echo '❌ Deployment failed!'
     }
     always {
       echo '🧹 Cleaning up workspace...'
@@ -57,4 +57,3 @@ pipeline {
     }
   }
 }
-
