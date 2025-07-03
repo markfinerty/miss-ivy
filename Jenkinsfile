@@ -11,21 +11,15 @@ pipeline {
       agent {
         docker {
           image 'node:18-alpine'
-          args '-u root:root'
+          args '-u 991:991' // ensure files are owned by Jenkins user
         }
       }
       steps {
         git credentialsId: 'github-pat', url: "${REPO_URL}"
         sh 'npm ci || npm install'
         sh 'npm run build'
-        // THIS IS THE PROBLEM AREA — MOVE STASH OUTSIDE
-      }
-    }
-
-    stage('Stash Dist') {
-      agent { label 'master' } // OR no label if you want it default
-      steps {
-        stash name: 'dist', includes: 'dist/**'
+        sh 'chown -R 991:991 dist' // ✅ ensure Jenkins can access dist
+        stash name: 'dist', includes: 'dist/**' // ✅ stash here
       }
     }
 
@@ -41,7 +35,7 @@ pipeline {
   post {
     always {
       echo '🧹 Cleaning up...'
-      // You can safely clean here after this works
+      cleanWs()
     }
   }
 }
