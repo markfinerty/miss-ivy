@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'node:18-alpine'
-      args '-u root:root' // needed if Jenkins runs as non-root and the container needs to write files
+      args '-u root:root'
     }
   }
 
@@ -50,3 +50,4 @@ pipeline {
     }
   }
 }
+
