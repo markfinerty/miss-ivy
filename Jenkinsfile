@@ -11,25 +11,27 @@ pipeline {
       agent {
         docker {
           image 'node:18-alpine'
-          args '-u 991:991' // Ensure container uses Jenkins UID
+          args '-u 991:991'
         }
       }
       steps {
-        deleteDir() // 🧹 Wipe workspace before clone to avoid permission carryover
-        git credentialsId: 'github-pat', url: "${REPO_URL}"
-        sh 'npm ci || npm install'
-        sh 'npm run build'
-        sh 'chown -R 991:991 dist' // ✅ Make sure Jenkins owns it
-        stash name: 'dist', includes: 'dist/**'
+        dir('build') {
+          deleteDir()
+          git credentialsId: 'github-pat', url: "${REPO_URL}"
+          sh 'npm ci || npm install'
+          sh 'npm run build'
+          sh 'chown -R 991:991 dist'
+          stash name: 'dist', includes: 'build/dist/**'
+        }
       }
     }
 
     stage('Deploy') {
       agent { label 'master' }
       steps {
-        deleteDir() // 🧹 Clean to avoid conflicts with existing workspace contents
+        deleteDir()
         unstash 'dist'
-        sh 'rsync -avz --delete dist/ /var/www/missivy.co'
+        sh 'rsync -avz --delete build/dist/ /var/www/missivy.co'
       }
     }
   }
@@ -43,4 +45,3 @@ pipeline {
     }
   }
 }
-
