@@ -31,12 +31,10 @@ pipeline {
     }
 
     stage('Deploy') {
-      steps {
-        sh '''
-            apk add --no-cache rsync
-            rsync -avz --delete dist/ $REMOTE_PATH
-        '''
-      }
+        agent { label 'jenkins' } // runs on the host instead
+        steps {
+            sh 'rsync -avz --delete dist/ /var/www/missivy.co'
+        }
     }
   }
 
