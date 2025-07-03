@@ -32,16 +32,29 @@ pipeline {
     }
 
     stage('Deploy') {
-      agent none
-      steps {
-        node('master') {
-          unstash 'dist'
-          sh 'ls -lah'
-          sh 'ls -lah dist'
-          sh 'rsync -avz --delete dist/ /var/www/missivy.co'
+  agent none
+  steps {
+    node('master') {
+      unstash 'dist'
+
+      sh 'echo "[DEBUG] Listing root of workspace:" && ls -lah'
+      sh 'echo "[DEBUG] Listing dist folder:" && ls -lah dist || echo "dist folder is missing!"'
+
+      sh '''
+        if [ ! -d "dist" ]; then
+          echo "[ERROR] dist folder not found after unstash"
+          exit 1
+        fi
+
+        echo "[INFO] Deploying with rsync..."
+        rsync -avz --delete dist/ /var/www/missivy.co || {
+          echo "[ERROR] rsync failed"
+          exit 1
         }
-      }
+      '''
     }
+  }
+}
   }
 
   post {
@@ -51,9 +64,9 @@ pipeline {
     failure {
       echo '❌ Deployment failed!'
     }
-    always {
-      echo '🧹 Cleaning up workspace...'
-      sh 'rm -rf node_modules dist'
-    }
+    // always {
+    //   echo '🧹 Cleaning up workspace...'
+    //   sh 'rm -rf node_modules dist'
+    // }
   }
 }
