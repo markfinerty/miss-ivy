@@ -73,7 +73,7 @@ function App() {
           menuPdf="/miss-ivy-menu.pdf"
           isReversed={true} // Reverses the layout
         />
-        <EventSection />
+        {/* <EventSection /> */}
         <ContactSection />
       </main>
       <MyFooter />
