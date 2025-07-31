@@ -5,7 +5,7 @@ import MyFooter from "./components/MyFooter";
 import MenuSection from "./sections/MenuSection";
 import ContactSection from "./sections/ContactSection";
 import menuItems from "./data/menuItems";
-import EventSection from "./sections/EventSection";
+// import EventSection from "./sections/EventSection";
 
 function App() {
   const paragraphRef = useRef(null);
@@ -65,12 +65,12 @@ function App() {
         <MenuSection
           title="Dining"
           items={menuItems.foodItems}
-          menuPdf="/miss-ivy-menu.pdf"
+          menuPdf="/dining-menu.pdf"
         />
         <MenuSection
           title="Cocktails"
           items={menuItems.drinkItems}
-          menuPdf="/miss-ivy-menu.pdf"
+          menuPdf="/cocktails-menu.pdf"
           isReversed={true} // Reverses the layout
         />
         {/* <EventSection /> */}
