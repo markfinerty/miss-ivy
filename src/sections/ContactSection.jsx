@@ -49,7 +49,7 @@ function ContactSection() {
             <FaClock className="text-miss-ivy-gold text-2xl" />
             <div>
               <p className="text-lg">Hours :</p>
-              <p className="text-md">Tue / Wed / Thur / Sun</p>
+              <p className="text-md">Tue / Thur / Sun</p>
               <p className="text-md">7 PM - 12 AM</p>
               <p className="text-md">Friday / Saturday</p>
               <p className="text-md">7 PM - 1 AM</p>
