@@ -7,7 +7,7 @@ export default function MyFooter() {
       <div className="w-full flex flex-col items-center space-y-2 mb-4">
         <Footer.Copyright
           by="MissIvyToronto™"
-          year={2024}
+          year={2025}
           className="text-miss-ivy-gold"
         />
         {/* SOCIALS */}
