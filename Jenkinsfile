@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git url: 'https://github.com/MarkFinerty/miss-ivy.git', credentialsId: 'github-pat'
+                git url: 'https://github.com/markfinerty/miss-ivy.git', credentialsId: 'github-pat'
             }
         }
 
